@@ -15,14 +15,11 @@ the animations behind this work, check out the Rebound section of the
 
 ## Add it to your project
 
-1. Run `npm install react-native-scrollable-tab-view --save`
-2. `var ScrollableTabView = require('react-native-scrollable-tab-view');`
+1. Run `npm install react-native-scrollable-tab-view-forked --save`
+2. `import ScrollableTabView, { DefaultTabBar, ScrollableTabBar } from 'react-native-scrollable-tab-view-forked'`
 
 ## Demo
-<a href="https://appetize.io/embed/6qfv7eydjtm34mhn6qwj2nt3xm?embed=true&screenOnly=false&xdocMsg=true&debug=true&scale=100&deviceColor=black&orientation=portrait&device=iphone6s&osVersion=9.3&deviceId=RGV2aWNlOjU2Y2FjNTExZWQwOTM2MTEwMGRhYTNlNg&platform=ios&width=375&height=668&phoneWidth=416&phoneHeight=870&screenOffsetLeft=21&screenOffsetTop=100&params=%7B%7D" target="_blank"><strong>Run this example</strong></a>
-
-<a href="https://raw.githubusercontent.com/brentvatne/react-native-scrollable-tab-view/master/demo_images/demo.gif"><img src="https://raw.githubusercontent.com/brentvatne/react-native-scrollable-tab-view/master/demo_images/demo.gif" width="350"></a>
-<a href="https://raw.githubusercontent.com/brentvatne/react-native-scrollable-tab-view/master/demo_images/demo-fb.gif"><img src="https://raw.githubusercontent.com/brentvatne/react-native-scrollable-tab-view/master/demo_images/demo-fb.gif" width="350"></a>
+![示例](https://github.com/LiuC520/react-native-scrollable-tab-view-forked/blob/master/example/example.png)
 
 ## Basic usage
 
@@ -81,7 +78,7 @@ Suppose we had a custom tab bar called `CustomTabBar`, we would inject
 it into our `ScrollableTabView` like this:
 
 ```javascript
-var ScrollableTabView = require('react-native-scrollable-tab-view');
+var ScrollableTabView = require('react-native-scrollable-tab-view-forked');
 var CustomTabBar = require('./CustomTabBar');
 
 var App = React.createClass({
@@ -96,9 +93,9 @@ var App = React.createClass({
   }
 });
 ```
-To start you can just copy [DefaultTabBar](https://github.com/skv-headless/react-native-scrollable-tab-view/blob/master/DefaultTabBar.js).
+To start you can just copy [DefaultTabBar](https://github.com/skv-headless/react-native-scrollable-tab-view-forked/blob/master/DefaultTabBar.js).
 
-## Examples
+## Examples 示例可以参考react-native-scrollable-tab-view中的实例，用法一样
 
 [SimpleExample](https://github.com/skv-headless/react-native-scrollable-tab-view/blob/master/examples/FacebookTabsExample/SimpleExample.js).
 
@@ -124,6 +121,7 @@ To start you can just copy [DefaultTabBar](https://github.com/skv-headless/react
 - **`page`** _(Integer)_ - set selected tab(can be buggy see  [#126](https://github.com/brentvatne/react-native-scrollable-tab-view/issues/126)
 - **`children`** _(ReactComponents)_ - each top-level child component should have a `tabLabel` prop that can be used by the tab bar component to render out the labels. The default tab bar expects it to be a string, but you can use anything you want if you make a custom tab bar.
 - **`tabBarUnderlineStyle`** _([View.propTypes.style](https://facebook.github.io/react-native/docs/view.html#style))_ - style of the default tab bar's underline.
+can set width in tabBarUnderlineStyle.
 - **`tabBarBackgroundColor`** _(String)_ - color of the default tab bar's background, defaults to `white`
 - **`tabBarActiveTextColor`** _(String)_ - color of the default tab bar's text when active, defaults to `navy`
 - **`tabBarInactiveTextColor`** _(String)_ - color of the default tab bar's text when inactive, defaults to `black`
