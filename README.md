@@ -1,6 +1,6 @@
 
 ## react-native-scrollable-tab-view-forked
-[![npm version](https://badge.fury.io/js/react-native-scrollable-tab-view.svg)](https://badge.fury.io/js/react-native-scrollable-tab-view)
+[![npm version](https://badge.fury.io/js/react-native-scrollable-tab-view-forked.svg)](https://badge.fury.io/js/react-native-scrollable-tab-view-forked)
 
 This is probably my favorite navigation pattern on Android, I wish it
 were more common on iOS! This is a very simple JavaScript-only
@@ -27,18 +27,51 @@ the animations behind this work, check out the Rebound section of the
 ## Basic usage
 
 ```javascript
-var ScrollableTabView = require('react-native-scrollable-tab-view');
 
-var App = React.createClass({
+export default class App extends Component {
   render() {
     return (
-      <ScrollableTabView>
-        <ReactPage tabLabel="React" />
-        <FlowPage tabLabel="Flow" />
-        <JestPage tabLabel="Jest" />
+      <ScrollableTabView
+
+        renderTabBar={() => (
+          <ScrollableTabBar
+            style={styles.scrollStyle}
+            tabStyle={styles.tabStyle}
+          />
+        )}
+        tabBarTextStyle={styles.tabBarTextStyle}
+        tabBarInactiveTextColor={'black'}
+        tabBarActiveTextColor={'red'}
+        tabBarUnderlineStyle={styles.underlineStyle}
+        initialPage={2}
+      >
+
+        <View key={'1'} tabLabel={'firt tab '} style={{flex:1,backgroundColor:'red'}}/>
+        <View key={'2'} tabLabel={'second tab'} style={{flex:1,backgroundColor:'blue'}}/>
+        <View key={'3'} tabLabel={'third tab'} style={{flex:1,backgroundColor:'yellow'}}/>
       </ScrollableTabView>
     );
   }
+}
+
+const styles = StyleSheet.create({
+   tabStyle: {},
+  scrollStyle: {
+    backgroundColor: 'white',
+    paddingLeft: 65,
+    paddingRight: 65,
+    // justifyContent: 'center',
+  },
+  tabBarTextStyle: {
+    fontSize: 14,
+    fontWeight: 'normal',
+  },
+  underlineStyle: {
+    height: 3,
+    backgroundColor: 'red',
+    borderRadius: 3,
+    width: 15,
+  },
 });
 ```
 
