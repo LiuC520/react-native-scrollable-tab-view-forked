@@ -1,6 +1,6 @@
 {
   "name": "react-native-scrollable-tab-view-forked",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "forked react-native-scrollable-tab-view ,you can set line width",
   "main": "index.js",
   "scripts": {
