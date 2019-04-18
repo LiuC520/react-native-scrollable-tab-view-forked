@@ -8,15 +8,14 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import ScrollableTabView, { DefaultTabBar, ScrollableTabBar } from 'react-native-scrollable-tab-view-forked'
+import ScrollableTabView, { DefaultTabBar, ScrollableTabBar } from './react-native-scrollable-tab-view-forked'
 
 export default class App extends Component {
   render() {
     return (
       <ScrollableTabView
-
         renderTabBar={() => (
-          <ScrollableTabBar
+          <DefaultTabBar
             style={styles.scrollStyle}
             tabStyle={styles.tabStyle}
           />
@@ -26,6 +25,7 @@ export default class App extends Component {
         tabBarActiveTextColor={'red'}
         tabBarUnderlineStyle={styles.underlineStyle}
         initialPage={2}
+        // containerWidth={200}
       >
 
         <View key={'1'} tabLabel={'firt tab '} style={{flex:1,backgroundColor:'red'}}/>
@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
    tabStyle: {},
   scrollStyle: {
     backgroundColor: 'white',
-    paddingLeft: 65,
-    paddingRight: 65,
+    // paddingLeft: 65,
+    // paddingRight: 65,
     // justifyContent: 'center',
   },
   tabBarTextStyle: {
