@@ -34,7 +34,7 @@ const DefaultTabBar = createReactClass({
     };
   },
   
-  renderTab(name, page, isTabActive, onPressHandler) {
+  renderTab(child, page, isTabActive, onPressHandler) {
     const { activeTextColor, inactiveTextColor, textStyle } = this.props;
     const textColor = isTabActive ? activeTextColor : inactiveTextColor;
     const fontWeight = isTabActive ? 'bold' : 'normal';
@@ -42,15 +42,15 @@ const DefaultTabBar = createReactClass({
     return (
       <Button
         style={{ flex: 1}}
-        key={name}
+        key={child.tabLabel}
         accessible
-        accessibilityLabel={name}
+        accessibilityLabel={child.tabLabel}
         accessibilityTraits="button"
         onPress={() => onPressHandler(page)}
       >
         <View style={[styles.tab, this.props.tabStyle]}>
           <Text style={[{ color: textColor, fontWeight }, textStyle]}>
-            {name}
+            {child.tabLabel}
           </Text>
         </View>
       </Button>
@@ -89,10 +89,10 @@ const DefaultTabBar = createReactClass({
         }, this.props.style]}
       >
 
-        {this.props.tabs.map((name, page) => {
+        {this.props.tabs.map((child, page) => {
           const isTabActive = this.props.activeTab === page;
           const renderTab = this.props.renderTab || this.renderTab;
-          return renderTab(name, page, isTabActive, this.props.goToPage);
+          return renderTab(child, page, isTabActive, this.props.goToPage);
         })}
 
         <Animated.View
