@@ -134,22 +134,22 @@ const ScrollableTabBar = createReactClass({
     }
   },
 
-  renderTab(name, page, isTabActive, onPressHandler, onLayoutHandler) {
+  renderTab(child, page, isTabActive, onPressHandler, onLayoutHandler) {
     const { activeTextColor, inactiveTextColor, textStyle ,activeTextStyle={}} = this.props;
     const textColor = isTabActive ? activeTextColor : inactiveTextColor;
     const fontWeight = isTabActive ? 'bold' : 'normal';
     const atextStyle = isTabActive ? activeTextStyle:{}
     return (<Button
-      key={`${name}_${page}`}
+      key={`${child.tabLabel}_${page}`}
       accessible
-      accessibilityLabel={name}
+      accessibilityLabel={child.tabLabel}
       accessibilityTraits="button"
       onPress={() => onPressHandler(page)}
       onLayout={onLayoutHandler}
     >
       <View style={[styles.tab, this.props.tabStyle]}>
         <Text style={[{ color: textColor, fontWeight }, textStyle,atextStyle]}>
-          {name}
+          {child.tabLabel}
         </Text>
       </View>
             </Button>);
@@ -200,10 +200,10 @@ const ScrollableTabBar = createReactClass({
           ref="tabContainer"
           onLayout={this.onTabContainerLayout}
         >
-          {this.props.tabs.map((name, page) => {
+          {this.props.tabs.map((child, page) => {
             const isTabActive = this.props.activeTab === page;
             const renderTab = this.props.renderTab || this.renderTab;
-            return renderTab(name, page, isTabActive, this.props.goToPage, this.measureTab.bind(this, page));
+            return renderTab(child, page, isTabActive, this.props.goToPage, this.measureTab.bind(this, page));
           })}
           <Animated.View style={[tabUnderlineStyle, dynamicTabUnderline, this.props.underlineStyle]}
             ref={(r) => { this._tabline = r; }}
