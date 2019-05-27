@@ -123,14 +123,14 @@ const styles = StyleSheet.create({
     // paddingBottom: 10,
   },
   tabs: {
-    height: 50,
+    height: 40,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    borderWidth: 1,
+    borderWidth: 0.5,
     borderTopWidth: 0,
     borderLeftWidth: 0,
     borderRightWidth: 0,
-    borderColor: '#ccc',
+    borderColor: '#E6E6E6',
   },
 });
 
