@@ -45,7 +45,7 @@ const ScrollableTabBar = createReactClass({
       tabStyle: {},
       tabsContainerStyle: {},
       underlineStyle: {},
-      width = Dimensions.get('window').width,
+      width : Dimensions.get('window').width,
     };
   },
 
