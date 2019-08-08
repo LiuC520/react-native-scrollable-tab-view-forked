@@ -1,3 +1,4 @@
+
 const React = require('react');
 const { ViewPropTypes } = ReactNative = require('react-native');
 const PropTypes = require('prop-types');
@@ -24,6 +25,7 @@ const DefaultTabBar = createReactClass({
     tabStyle: ViewPropTypes.style,
     renderTab: PropTypes.func,
     underlineStyle: ViewPropTypes.style,
+    width:PropTypes.number,
   },
 
   getDefaultProps() {
@@ -31,6 +33,7 @@ const DefaultTabBar = createReactClass({
       activeTextColor: 'navy',
       inactiveTextColor: 'black',
       backgroundColor: null,
+      width:Dimensions.get('window').width
     };
   },
   
@@ -62,7 +65,7 @@ const DefaultTabBar = createReactClass({
  * 增加tab可以固定宽度
  */
   render() {
-    const width = Dimensions.get('window').width;
+    const width = this.props.width;
     const containerWidth = this.props.containerWidth || width;
     const numberOfTabs = this.props.tabs.length;
     const eachWidth = containerWidth / numberOfTabs

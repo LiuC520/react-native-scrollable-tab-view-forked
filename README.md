@@ -1,3 +1,11 @@
+<!--
+ * @PageName: 页面名称
+ * @Description: 
+ * @Author: 刘成
+ * @Date: 2019-08-08 15:56:02
+ * @LastEditTime: 2019-08-08 16:00:00
+ * @LastEditors: 刘成
+ -->
 
 ## react-native-scrollable-tab-view-forked
 [![npm version](https://badge.fury.io/js/react-native-scrollable-tab-view-forked.svg)](https://badge.fury.io/js/react-native-scrollable-tab-view-forked)
@@ -10,6 +18,8 @@ the animations behind this work, check out the Rebound section of the
 
 ## add , set line width
 ## add , fix defaulttabbar's width
+## add , can set DefaultTabBar's width
+## add , can set ScrollableTabBar's width
 
 
 
