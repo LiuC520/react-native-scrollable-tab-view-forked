@@ -14,7 +14,6 @@ const {
 } = ReactNative;
 const Button = require('./Button');
 
-const 
 
 const ScrollableTabBar = createReactClass({
   propTypes: {
