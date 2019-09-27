@@ -1,3 +1,4 @@
+
 const React = require('react')
 
 const { Component } = React
@@ -12,10 +13,10 @@ const {
   ScrollView,
   Platform,
   StyleSheet,
-  ViewPagerAndroid,
   InteractionManager,
 } = ReactNative
 const TimerMixin = require('react-timer-mixin')
+import ViewPagerAndroid from "@react-native-community/viewpager"
 
 const SceneComponent = require('./SceneComponent')
 
