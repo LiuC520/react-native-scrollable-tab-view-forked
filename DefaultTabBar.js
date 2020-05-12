@@ -1,6 +1,6 @@
 
 const React = require('react');
-const { ViewPropTypes } = ReactNative = require('react-native');
+const { ViewPropTypes, TouchableOpacity } = (ReactNative = require('react-native'))
 const PropTypes = require('prop-types');
 const createReactClass = require('create-react-class');
 
@@ -11,7 +11,7 @@ const {
   Animated,
   Dimensions,
 } = ReactNative;
-const Button = require('./Button');
+// const Button = require('./Button');
 
 const DefaultTabBar = createReactClass({
   propTypes: {
@@ -43,21 +43,20 @@ const DefaultTabBar = createReactClass({
     const fontWeight = isTabActive ? 'bold' : 'normal';
 
     return (
-      <Button
-        style={{ flex: 1}}
-        key={child.tabLabel}
-        accessible
-        accessibilityLabel={child.tabLabel}
-        accessibilityTraits="button"
-        onPress={() => onPressHandler(page)}
-      >
-        <View style={[styles.tab, this.props.tabStyle]}>
-          <Text style={[{ color: textColor, fontWeight }, textStyle]}>
-            {child.tabLabel}
-          </Text>
-        </View>
-      </Button>
-    );
+			<TouchableOpacity
+				style={{ flex: 1 }}
+				key={child.tabLabel}
+				accessible
+				activeOpacity={1}
+				// accessibilityLabel={child.tabLabel}
+				accessibilityTraits='button'
+				onPress={() => onPressHandler(page)}
+			>
+				<View style={[styles.tab, this.props.tabStyle]}>
+					<Text style={[{ color: textColor, fontWeight }, textStyle]}>{child.tabLabel}</Text>
+				</View>
+			</TouchableOpacity>
+		)
   },
 
   /**
