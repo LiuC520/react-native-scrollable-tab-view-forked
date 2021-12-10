@@ -16,7 +16,7 @@ const {
   InteractionManager,
 } = ReactNative
 const TimerMixin = require('react-timer-mixin')
-import ViewPagerAndroid from "@react-native-community/viewpager"
+import ViewPagerAndroid from "react-native-pager-view"
 
 const SceneComponent = require('./SceneComponent')
 
@@ -308,7 +308,9 @@ const ScrollableTabView = createReactClass({
 
   _handleLayout(e) {
     const { width } = e.nativeEvent.layout
-
+		if (!width || width <= 0 || Math.round(width) === Math.round(this.props.containerWidth)) {
+			return
+		}
     if (Math.round(width) !== Math.round(this.props.containerWidth)) {
       if (Platform.OS === 'ios') {
         const containerWidthAnimatedValue = new Animated.Value(width)
