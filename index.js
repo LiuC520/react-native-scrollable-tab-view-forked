@@ -31,7 +31,6 @@ const ScrollableTabView = createReactClass({
 		DefaultTabBar,
 		ScrollableTabBar,
 	},
-	scrollView : null,
 	scrollOnMountCalled: false,
 
 	propTypes: {
@@ -135,7 +134,6 @@ const ScrollableTabView = createReactClass({
 	},
 
 	goToPage(pageNumber) {
-		console.log("")
 		if (Platform.OS === 'ios') {
 			const offset = pageNumber * this.props.containerWidth
 			if (this.scrollView) {
@@ -143,7 +141,6 @@ const ScrollableTabView = createReactClass({
 					.scrollTo({ x: offset, y: 0, animated: !this.props.scrollWithoutAnimation })
 			}
 		} else if (this.scrollView) {
-			console.log("scrollview :" + this.scrollView);
 			if (this.props.scrollWithoutAnimation) {
 				this.scrollView.setPageWithoutAnimation(pageNumber)
 			} else {
