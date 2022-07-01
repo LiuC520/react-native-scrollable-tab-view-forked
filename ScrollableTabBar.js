@@ -2,7 +2,7 @@ const React = require("react");
 const ReactNative = require("react-native");
 const PropTypes = require("prop-types");
 const createReactClass = require("create-react-class");
-const {ViewPropTypes} = require("deprecated-react-native-prop-types");
+const {ViewPropTypes, TextPropTypes} = require("deprecated-react-native-prop-types");
 
 const {View, Animated, StyleSheet, ScrollView, Text, Platform, Dimensions} = ReactNative;
 const Button = require("./Button");

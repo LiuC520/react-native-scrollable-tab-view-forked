@@ -4,7 +4,7 @@ const {Component} = React;
 const ReactNative = require("react-native");
 const createReactClass = require("create-react-class");
 const PropTypes = require("prop-types");
-const {ViewPropTypes, TextPropTypes} = require("deprecated-react-native-prop-types");
+const {ViewPropTypes} = require("deprecated-react-native-prop-types");
 
 const {Dimensions, View, Animated, ScrollView, Platform, StyleSheet, InteractionManager} = ReactNative;
 const TimerMixin = require("react-timer-mixin");
