@@ -1,7 +1,8 @@
 const React = require("react");
-const {ViewPropTypes} = (ReactNative = require("react-native"));
+constReactNative = require("react-native");
 const PropTypes = require("prop-types");
 const createReactClass = require("create-react-class");
+const {ViewPropTypes} = require("deprecated-react-native-prop-types");
 
 const {View, Animated, StyleSheet, ScrollView, Text, Platform, Dimensions} = ReactNative;
 const Button = require("./Button");
@@ -18,11 +19,11 @@ const ScrollableTabBar = createReactClass({
 		style: ViewPropTypes.style,
 		tabStyle: ViewPropTypes.style,
 		tabsContainerStyle: ViewPropTypes.style,
-		textStyle: Text.propTypes.style,
+		textStyle: TextPropTypes.style,
 		renderTab: PropTypes.func,
 		underlineStyle: ViewPropTypes.style,
 		onScroll: PropTypes.func,
-		activeTextStyle: Text.propTypes.style,
+		activeTextStyle: TextPropTypes.style,
 		width: PropTypes.number,
 		activeTabStyle: PropTypes.string,
 	},
